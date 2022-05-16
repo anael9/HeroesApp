@@ -1,0 +1,69 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push">
+        <h1>sidenav</h1>
+
+        <mat-toolbar>
+            <span>Menu</span>
+            <span class="spacer"></span>
+
+            <button mat-button
+            (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <a routerLink="./listado"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>label</mat-icon>
+                <span>Listado de Heroes</span>
+            </a>
+            <a routerLink="./agregar"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>add</mat-icon>
+                <span>Listado de Heroes</span>
+            </a>
+            <a routerLink="./editar:id"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>add</mat-icon>
+                <span>Listado de Heroes</span>
+            </a>
+            <a routerLink="./buscar"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>add</mat-icon>
+                <span>Listado de Heroes</span>
+            </a>
+            <a routerLink="./:id"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>add</mat-icon>
+                <span>Listado de Heroes</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-toolbar>
+        <span>Menu</span>
+        <button mat-button
+        (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span class="spacer"></span>
+        
+        <span>{{ auth.usuario }}</span>
+
+        <button mat-button (click)="logout()">
+            Logout
+        </button>
+    </mat-toolbar>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+    
+</mat-sidenav-container>
